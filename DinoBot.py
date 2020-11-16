@@ -1,13 +1,12 @@
 import pyautogui # pip install pyautogui
 from PIL import Image, ImageGrab # pip install pillow
-# from numpy import asarray
 import time
+
 is_night = False
-color = 83
+color = 83 # Color of the cactus and bird during daytime
 
 def fast_night(data):
-    global color
-    if data[1700,125] != 255:          
+    if data[1700,125] != 255:  # Check is the color of the background has changed        
         return True
     return False
 
@@ -16,8 +15,8 @@ def hit(key):
     return
 
 def isCollide(data):        
-    for x in range(300, 550,5):
-        for y in range(630, 670,3):
+    for x in range(300, 550,5): # Change these numbers to match your screen
+        for y in range(630, 670,3): # Change these numbers to match your screen
             #print(data[x,y])            
             if is_night and data[x, y] > color:
                 hit("up")
