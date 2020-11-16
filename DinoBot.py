@@ -1,6 +1,7 @@
 import pyautogui # pip install pyautogui
 from PIL import Image, ImageGrab # pip install pillow
 import time
+
 is_night = False
 color = 83 # Color of the cactus and bird during daytime
 
